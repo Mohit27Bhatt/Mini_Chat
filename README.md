@@ -132,6 +132,12 @@ Mini_Chat/
    http://localhost:5173
 
 
+AI Tools Used  :
+Github Copilot
+ChatGPT 
+Lovable for UI
+Claude
+
 # -------------------------------
 # SUMMARY
 # -------------------------------
