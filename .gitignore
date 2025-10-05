@@ -1,0 +1,16 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Backend
+backend/target/
+
+# Environment files
+*.env
+backend/src/main/resources/application.properties
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

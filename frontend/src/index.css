@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 210 12% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 12% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 12% 16%;
+
+    /* Modern teal/cyan primary */
+    --primary: 180 70% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 180 65% 55%;
+    --primary-dark: 180 75% 35%;
+
+    /* Accent cyan/green */
+    --accent: 165 75% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 92%;
+    --secondary-foreground: 210 12% 16%;
+
+    --muted: 210 15% 95%;
+    --muted-foreground: 210 10% 50%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 88%;
+    --input: 210 15% 92%;
+    --ring: 180 70% 45%;
+
+    /* Chat-specific colors */
+    --chat-bg: 210 18% 96%;
+    --chat-sidebar: 0 0% 100%;
+    --message-sent: 180 70% 45%;
+    --message-received: 0 0% 100%;
+    --online: 140 70% 50%;
+    --offline: 210 10% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(180 70% 45%), hsl(165 75% 50%));
+    --gradient-bg: linear-gradient(180deg, hsl(210 20% 98%), hsl(180 15% 96%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(210 15% 85% / 0.3);
+    --shadow-md: 0 4px 16px hsl(210 15% 75% / 0.2);
+    --shadow-lg: 0 8px 32px hsl(210 15% 65% / 0.15);
+    --shadow-glow: 0 0 24px hsl(180 70% 45% / 0.2);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 12% 16%;
+    --sidebar-border: 210 15% 90%;
+  }
+
+  .dark {
+    --background: 215 25% 12%;
+    --foreground: 210 20% 98%;
+
+    --card: 215 22% 15%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 215 22% 15%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 180 65% 50%;
+    --primary-foreground: 215 25% 12%;
+    --primary-light: 180 60% 60%;
+    --primary-dark: 180 70% 40%;
+
+    --accent: 165 70% 55%;
+    --accent-foreground: 215 25% 12%;
+
+    --secondary: 215 20% 20%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 20% 18%;
+    --muted-foreground: 210 15% 65%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 20% 22%;
+    --input: 215 20% 20%;
+    --ring: 180 65% 50%;
+
+    --chat-bg: 215 25% 10%;
+    --chat-sidebar: 215 22% 15%;
+    --message-sent: 180 65% 50%;
+    --message-received: 215 20% 20%;
+    --online: 140 65% 55%;
+    --offline: 210 15% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(180 65% 50%), hsl(165 70% 55%));
+    --gradient-bg: linear-gradient(180deg, hsl(215 25% 12%), hsl(215 25% 10%));
+    --gradient-card: linear-gradient(145deg, hsl(215 22% 15%), hsl(215 25% 12%));
+
+    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 4px 16px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 8px 32px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 24px hsl(180 65% 50% / 0.3);
+
+    --sidebar-background: 215 22% 15%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-border: 215 20% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-bg {
+    background: var(--gradient-bg);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+
+  .dark .glass {
+    @apply bg-card/80 backdrop-blur-md border-white/10;
+  }
+}
